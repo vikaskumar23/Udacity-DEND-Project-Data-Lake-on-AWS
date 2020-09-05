@@ -4,6 +4,10 @@ The objective of this project is to build a data lake and an ETL pipeline in Spa
 ## Introduction
 In this project, a spark job is created that takes data from Amazon S3 bucket, process it and convert it to Star Schema data model. Then data is finally stored in Amazon S3 bucket.
 
+## Spark Overview
+Apache Spark is a unified analytics engine for large-scale data processing. It provides high-level APIs in Java, Scala, Python and R, and an optimized engine that supports general execution graphs. It also supports a rich set of higher-level tools including Spark SQL for SQL and structured data processing, MLlib for machine learning, GraphX for graph processing, and Structured Streaming for incremental computation and stream processing.
+To read more about ```Spark``` [click here](https://spark.apache.org/docs/latest/)
+
 ## Project Scope
 Data Lake is created on AWS that contains both processed and unprocessed data. The data can be used by analysts, business people as per their requirement.
 The analytics Team wants to analyze the behaviour of users on sparkify app.
@@ -39,7 +43,7 @@ log_data/2018/11/2018-11-13-events.json
 ## Data Model
 Using the song and log datasets, data is transformed into Star Schema, so that it can be queries easily and understandable to analysts and business users.
 First Data is fetched from S3 bucket to staging tables.
-![Staging Taables](https://github.com/vikaskumar23/Udacity-DEND-Project-Data-Warehouse-on-Redshift/blob/master/staging_tables.PNG)
+![Staging Taables](https://github.com/vikaskumar23/Udacity-DEND-Project-Data-Lake-on-AWS/blob/master/staging_tables.PNG)
 
 Then after some transformations data is loaded into star Schema. Some transformations include:
 - Date data is divided in chunks to create date dimension.
@@ -47,7 +51,7 @@ Then after some transformations data is loaded into star Schema. Some transforma
 - Duplicate data is removed before transforming to star schema.
 
 The resulting star schema consists of one fact table and four dimension tables.
-![Data Model](https://github.com/vikaskumar23/Udacity-DEND-Project-Data-Warehouse-on-Redshift/blob/master/dbmodel.png)
+![Data Model](https://github.com/vikaskumar23/Udacity-DEND-Project-Data-Lake-on-AWS/blob/master/dbmodel.png)
 ##### Fact Table
 - **songplays:** records in log data associated with song plays i.e. records with page ```NextSong```
     - **songplay_id:** unique id for each songplay event
@@ -114,3 +118,10 @@ This project contains two files:
 	```
 7. Then check for processed data in output bucket after the completion of spark job.
 8. Now the Data is present in Star Schema in parquet format and ready for use by analytics team and business people.
+
+## References
+www.udacity.com
+
+https://spark.apache.org/docs/latest/
+
+https://towardsdatascience.com/the-art-of-joining-in-spark-dcbd33d693c
