@@ -6,6 +6,7 @@ In this project, a spark job is created that takes data from Amazon S3 bucket, p
 
 ## Spark Overview
 Apache Spark is a unified analytics engine for large-scale data processing. It provides high-level APIs in Java, Scala, Python and R, and an optimized engine that supports general execution graphs. It also supports a rich set of higher-level tools including Spark SQL for SQL and structured data processing, MLlib for machine learning, GraphX for graph processing, and Structured Streaming for incremental computation and stream processing.
+
 To read more about ```Spark``` [click here](https://spark.apache.org/docs/latest/)
 
 ## Project Scope
