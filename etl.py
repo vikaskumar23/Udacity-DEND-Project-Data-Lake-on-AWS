@@ -158,11 +158,13 @@ def process_log_data(spark, input_data, output_data):
 
 def main():
     """
-    Creates a spark session and executes ETL job to process songs and event data
+    - Creates a spark session and executes ETL job to process songs and event data
+    
+    - Please fill output_data path before executing this spark job.
     """
     spark = create_spark_session()
     input_data = "s3a://udacity-dend/"
-    output_data = "s3a://vikasoutput/output/"
+    output_data = "####"
 
     process_song_data(spark, input_data, output_data)
     process_log_data(spark, input_data, output_data)
